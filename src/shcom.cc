@@ -28,14 +28,16 @@
 #include "emc.hh"		// EMC NML
 #include "emc_nml.hh"
 //#include "canon.hh"		// CANON_UNITS, CANON_UNITS_INCHES,MM,CM
-#include "depend_struct.h"
+#include "depend_struct.hh"
 //#include "emcglb.h"		// EMC_NMLFILE, TRAJ_MAX_VELOCITY, etc.
 #include "emccfg.h"		// DEFAULT_TRAJ_MAX_VELOCITY
 //#include "inifile.hh"		// INIFILE
 #include "nml_oi.hh"            // nmlErrorFormat, NML_ERROR, etc
-#include "rcs_print.hh"
+#include "rcs_prnt.hh"
 #include "timer.hh"             // esleep
 #include "shcom.hh"             // Common NML communications functions
+
+#include "debugflags.h"
 
 LINEAR_UNIT_CONVERSION linearUnitConversion;
 ANGULAR_UNIT_CONVERSION angularUnitConversion;
@@ -774,7 +776,7 @@ int sendLubeOff()
 
     return 0;
 }
-
+/*
 int sendSpindleForward()
 {
     EMC_SPINDLE_ON emc_spindle_on_msg;
@@ -792,8 +794,8 @@ int sendSpindleForward()
     }
 
     return 0;
-}
-
+}*/
+/*
 int sendSpindleReverse()
 {
     EMC_SPINDLE_ON emc_spindle_on_msg;
@@ -812,7 +814,7 @@ int sendSpindleReverse()
     }
 
     return 0;
-}
+}*/
 
 int sendSpindleOff()
 {

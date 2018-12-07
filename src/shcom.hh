@@ -123,8 +123,8 @@ extern int sendFloodOn();
 extern int sendFloodOff();
 extern int sendLubeOn();
 extern int sendLubeOff();
-extern int sendSpindleForward();
-extern int sendSpindleReverse();
+//extern int sendSpindleForward();
+//extern int sendSpindleReverse();
 extern int sendSpindleOff();
 extern int sendSpindleIncrease();
 extern int sendSpindleDecrease();
@@ -154,7 +154,7 @@ extern int sendAxisLoadComp(int axis, const char *file, int type);
 extern int sendSetTeleopEnable(int enable);
 extern int sendClearProbeTrippedFlag();
 extern int sendProbe(double x, double y, double z);
-extern int iniLoad(const char *filename);
+//extern int iniLoad(const char *filename);
 extern int checkStatus();
 
 #endif				/* ifndef SHCOM_HH */

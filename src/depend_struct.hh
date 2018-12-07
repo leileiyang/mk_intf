@@ -13,6 +13,10 @@
 #define ACTIVE_M_CODES 10
 #define ACTIVE_SETTINGS 3
 
+// Steal from machinekit/src/emc/nml_intf/emcglb.h
+extern char emc_nmlfile[LINELEN];
+extern int emc_debug;
+
 // This rest of the file is from machinekit/src/emc/task/nml_intf/canon.hh
 
 #define OFF 0
