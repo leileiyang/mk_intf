@@ -9,7 +9,7 @@ class MkIntfTest: public ::testing::Test {
   void SetUp() override {
     retry_time_ = 10.0;
     retry_interval_ = 1.0;
-    strcpy(emc_nmlfile, "mk.nml");
+    strcpy(emc_nmlfile, "linuxcnc.nml");
   }
 
  double retry_time_;
@@ -24,5 +24,5 @@ TEST_F(MkIntfTest, TryNml) {
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
-  return 0;
+  return RUN_ALL_TESTS();
 }
