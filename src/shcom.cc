@@ -28,7 +28,6 @@
 #include "emc.hh"		// EMC NML
 #include "emc_nml.hh"
 //#include "canon.hh"		// CANON_UNITS, CANON_UNITS_INCHES,MM,CM
-#include "depend_struct.hh"
 //#include "emcglb.h"		// EMC_NMLFILE, TRAJ_MAX_VELOCITY, etc.
 #include "emccfg.h"		// DEFAULT_TRAJ_MAX_VELOCITY
 //#include "inifile.hh"		// INIFILE

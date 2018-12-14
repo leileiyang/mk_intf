@@ -34,8 +34,9 @@ class EMC_SPINDLE_STAT;
 class EMC_COOLANT_STAT;
 class EMC_LUBE_STAT;
 class EMC_IO_STAT;
-class EMC_STAT;
+class EMC_STAT; */
 class CMS;
+/*
 class RCS_CMD_CHANNEL;
 class RCS_STAT_CHANNEL;
 class NML;

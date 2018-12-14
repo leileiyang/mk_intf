@@ -20,6 +20,8 @@
 #include "emc_nml.hh"
 #include "nml_oi.hh"            // NML_ERROR_LEN
 
+#include "depend_struct.hh"
+
 #define CLOSE(a,b,eps) ((a)-(b) < +(eps) && (a)-(b) > -(eps))
 #define LINEAR_CLOSENESS 0.0001
 #define ANGULAR_CLOSENESS 0.0001
