@@ -1388,5 +1388,20 @@ int checkStatus ()
     return 0;
 }
 
-
+int emcShutdown() {
+  if (0 != emcCommandBuffer) {
+	  delete emcCommandBuffer;
+	  emcCommandBuffer = 0;
+	}
+  if (0 != emcStatusBuffer) {
+	  delete emcStatusBuffer;
+	  emcStatusBuffer = 0;
+	  emcStatus = 0;
+	}
+  if (0 != emcErrorBuffer) {
+    delete emcErrorBuffer;
+    emcErrorBuffer = 0;
+  }
+  return 0;
+}
 
