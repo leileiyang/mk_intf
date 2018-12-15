@@ -7,9 +7,14 @@
 class MkIntfTest: public ::testing::Test {
  protected:
   void SetUp() override {
+    initEmc();
     retry_time_ = 10.0;
     retry_interval_ = 1.0;
     strcpy(emc_nmlfile, "linuxcnc.nml");
+  }
+
+  void TearDown() override {
+    emcShutdown();
   }
 
  double retry_time_;
