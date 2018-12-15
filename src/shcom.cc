@@ -1405,3 +1405,21 @@ int emcShutdown() {
   return 0;
 }
 
+void initEmc() {
+  emcWaitType = EMC_WAIT_RECEIVED;
+  emcCommandSerialNumber = 0;
+  saveEmcCommandSerialNumber = 0;
+  emcTimeout = 0.0;
+  emcUpdateType = EMC_UPDATE_AUTO;
+  linearUnitConversion = LINEAR_UNITS_AUTO;
+  angularUnitConversion = ANGULAR_UNITS_AUTO;
+  emcCommandBuffer = 0;
+  emcStatusBuffer = 0;
+  emcStatus = 0;
+
+  emcErrorBuffer = 0;
+  error_string[LINELEN-1] = 0;
+  operator_text_string[LINELEN-1] = 0;
+  operator_display_string[LINELEN-1] = 0;
+  programStartLine = 0;
+}
