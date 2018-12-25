@@ -68,7 +68,7 @@ extern int saveEmcCommandSerialNumber;
 // the NML channels to the EMC task
 extern RCS_CMD_CHANNEL *emcCommandBuffer;
 extern RCS_STAT_CHANNEL *emcStatusBuffer;
-// EMC_STAT *emcStatus;
+extern EMC_STAT *emcStatus;
 
 // the NML channel for errors
 extern NML *emcErrorBuffer;

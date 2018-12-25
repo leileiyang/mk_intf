@@ -1,3 +1,5 @@
+#include <unistd.h>
+
 #include "gtest/gtest.h"
 
 #include <string.h>
@@ -22,10 +24,28 @@ class MkIntfTest: public ::testing::Test {
 
 };
 
-TEST_F(MkIntfTest, TryNml) {
+/*TEST_F(MkIntfTest, TryNml) {
   int ret = tryNml(retry_time_, retry_interval_);
   EXPECT_EQ(ret, 0);
+}*/
+
+//extern int sendManual();
+//extern int sendAuto();
+//extern int sendMdi();
+
+TEST_F(MkIntfTest, SendInterface) {
+  int ret = tryNml(retry_time_, retry_interval_);
+  EXPECT_EQ(ret, 0);
+  ASSERT_NE(emcStatus, nullptr);
+
+  ret  = sendAuto();
+  EXPECT_EQ(ret, 0);
+  ret = updateStatus();
+  EXPECT_EQ(ret, 0);
+  //EXPECT_EQ(emcStatus->task.state, EMC_TASK_STATE_ON);
+  EXPECT_EQ(emcStatus->task.mode, EMC_TASK_MODE_AUTO);
 }
+
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);

@@ -1006,8 +1006,11 @@ class EMC_TRAJ_STAT:public EMC_TRAJ_STAT_MSG {
     int id;			// id of the currently executing motion
     bool paused;			// non-zero means motion paused
     double scale;		// velocity scale factor
+
+#ifndef JAVA_DIAG_APPLET
     double rapid_scale;		// rapid scale factor
     double spindle_scale;	// spindle velocity scale factor
+#endif
 
     EmcPose position;		// current commanded position
     EmcPose actualPosition;	// current actual position, from forward kins
@@ -1174,10 +1177,13 @@ class EMC_MOTION_STAT:public EMC_MOTION_STAT_MSG {
     EMC_AXIS_STAT axis[EMC_AXIS_MAX];
     EMC_SPINDLE_STAT spindle;
 
+#ifndef JAVA_DIAG_APPLET
     int synch_di[EMC_MAX_DIO];  // motion inputs queried by interp
     int synch_do[EMC_MAX_DIO];  // motion outputs queried by interp
     double analog_input[EMC_MAX_AIO]; //motion analog inputs queried by interp
     double analog_output[EMC_MAX_AIO]; //motion analog outputs queried by interp
+#endif
+
     int debug;			// copy of EMC_DEBUG global
 };
 
@@ -1429,8 +1435,12 @@ class EMC_TASK_STAT:public EMC_TASK_STAT_MSG {
     int motionLine;		// line motion is executing-- may lag
     int currentLine;		// line currently executing
     int readLine;		// line interpreter has read to
+
+#ifndef JAVA_DIAG_APPLET
     bool optional_stop_state;	// state of optional stop (== ON means we stop on M1)
     bool block_delete_state;	// state of block delete (== ON means we ignore lines starting with "/")
+#endif
+
     bool input_timeout;		// has a timeout happened on digital input
     char file[LINELEN];
     char command[LINELEN];
@@ -1445,10 +1455,14 @@ class EMC_TASK_STAT:public EMC_TASK_STAT_MSG {
     CANON_UNITS programUnits;	// CANON_UNITS_INCHES,MM,CM
 
     int interpreter_errcode;	// return value from rs274ngc function 
+
+#ifndef JAVA_DIAG_APPLET
     // (only useful for new interpreter.)
     int task_paused;		// non-zero means task is paused
     double delayLeft;           // delay time left of G4, M66..
     int queuedMDIcommands;      // current length of MDI input queue
+#endif
+
 };
 
 // declarations for EMC_TOOL classes
@@ -2017,8 +2031,10 @@ class EMC_IO_STAT:public EMC_IO_STAT_MSG {
     // top-level stuff
     double cycleTime;
     int debug;			// copy of EMC_DEBUG global
+#ifndef JAVA_DIAG_APPLET
     int reason;			// to communicate abort/fault cause
     int fault;                  //  0 on succes, 1 on fault during M6
+#endif
     // aggregate of IO-related status classes
     EMC_TOOL_STAT tool;
     EMC_COOLANT_STAT coolant;

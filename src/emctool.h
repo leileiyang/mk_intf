@@ -30,7 +30,10 @@ struct CANON_TOOL_TABLE {
     double diameter;
     double frontangle;
     double backangle;
+#ifndef JAVA_DIAG_APPLET
     int orientation;
+#endif
+
 };
 
 #endif
