@@ -20,5 +20,5 @@ add_custom_target (
   DEPENDS ${PROJECT_SOURCE_DIR}/emc_nml.cc
   )
 
-add_library(mkmsg SHARED depend_struct.cc modal_state.cc shcom.cc emc.cc)
+add_library(mkmsg SHARED depend_struct.cc modal_state.cc shcom.cc emc_nml.cc)
 add_dependencies (mkmsg generate-msg-cc)
