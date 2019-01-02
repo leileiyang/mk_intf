@@ -24,10 +24,10 @@ class MkIntfTest: public ::testing::Test {
 
 };
 
-/*TEST_F(MkIntfTest, TryNml) {
+TEST_F(MkIntfTest, TryNml) {
   int ret = tryNml(retry_time_, retry_interval_);
   EXPECT_EQ(ret, 0);
-}*/
+}
 
 //extern int sendManual();
 //extern int sendAuto();
