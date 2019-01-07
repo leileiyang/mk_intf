@@ -1813,9 +1813,9 @@ void EMC_AUX_STAT::update(CMS *cms)
 
 	cms->beginClass("EMC_AUX_STAT","EMC_AUX_STAT_MSG");
 
-	//cms->beginBaseClass("EMC_AUX_STAT_MSG");
-	//EMC_AUX_STAT_MSG::update(cms);
-	//cms->endBaseClass("EMC_AUX_STAT_MSG");
+	cms->beginBaseClass("EMC_AUX_STAT_MSG");
+	EMC_AUX_STAT_MSG::update(cms);
+	cms->endBaseClass("EMC_AUX_STAT_MSG");
 
 	cms->update_with_name("estop",estop);
 
@@ -1833,7 +1833,7 @@ void EMC_AUX_STAT_MSG::update(CMS *cms)
 
 	cms->beginClass("EMC_AUX_STAT_MSG","RCS_STAT_MSG");
 
-	RCS_STAT_MSG::update_stat_msg_base(cms);
+	//RCS_STAT_MSG::update_stat_msg_base(cms);
 
 	cms->endClass("EMC_AUX_STAT_MSG","RCS_STAT_MSG");
 
@@ -2492,9 +2492,9 @@ void EMC_COOLANT_STAT::update(CMS *cms)
 
 	cms->beginClass("EMC_COOLANT_STAT","EMC_COOLANT_STAT_MSG");
 
-	//cms->beginBaseClass("EMC_COOLANT_STAT_MSG");
-	//EMC_COOLANT_STAT_MSG::update(cms);
-	//cms->endBaseClass("EMC_COOLANT_STAT_MSG");
+	cms->beginBaseClass("EMC_COOLANT_STAT_MSG");
+	EMC_COOLANT_STAT_MSG::update(cms);
+	cms->endBaseClass("EMC_COOLANT_STAT_MSG");
 
 	cms->update_with_name("mist",mist);
 	cms->update_with_name("flood",flood);
@@ -2513,7 +2513,7 @@ void EMC_COOLANT_STAT_MSG::update(CMS *cms)
 
 	cms->beginClass("EMC_COOLANT_STAT_MSG","RCS_STAT_MSG");
 
-	RCS_STAT_MSG::update_stat_msg_base(cms);
+	//RCS_STAT_MSG::update_stat_msg_base(cms);
 
 	cms->endClass("EMC_COOLANT_STAT_MSG","RCS_STAT_MSG");
 
@@ -2804,9 +2804,9 @@ void EMC_LUBE_STAT::update(CMS *cms)
 
 	cms->beginClass("EMC_LUBE_STAT","EMC_LUBE_STAT_MSG");
 
-	//cms->beginBaseClass("EMC_LUBE_STAT_MSG");
-	//EMC_LUBE_STAT_MSG::update(cms);
-	//cms->endBaseClass("EMC_LUBE_STAT_MSG");
+	cms->beginBaseClass("EMC_LUBE_STAT_MSG");
+	EMC_LUBE_STAT_MSG::update(cms);
+	cms->endBaseClass("EMC_LUBE_STAT_MSG");
 
 	cms->update_with_name("on",on);
 	cms->update_with_name("level",level);
@@ -2825,7 +2825,7 @@ void EMC_LUBE_STAT_MSG::update(CMS *cms)
 
 	cms->beginClass("EMC_LUBE_STAT_MSG","RCS_STAT_MSG");
 
-	RCS_STAT_MSG::update_stat_msg_base(cms);
+	//RCS_STAT_MSG::update_stat_msg_base(cms);
 
 	cms->endClass("EMC_LUBE_STAT_MSG","RCS_STAT_MSG");
 
@@ -3307,9 +3307,9 @@ void EMC_SPINDLE_STAT::update(CMS *cms)
 
 	cms->beginClass("EMC_SPINDLE_STAT","EMC_SPINDLE_STAT_MSG");
 
-	//cms->beginBaseClass("EMC_SPINDLE_STAT_MSG");
-	//EMC_SPINDLE_STAT_MSG::update(cms);
-	//cms->endBaseClass("EMC_SPINDLE_STAT_MSG");
+	cms->beginBaseClass("EMC_SPINDLE_STAT_MSG");
+	EMC_SPINDLE_STAT_MSG::update(cms);
+	cms->endBaseClass("EMC_SPINDLE_STAT_MSG");
 
 	cms->update_with_name("speed",speed);
 	cms->update_with_name("direction",direction);
@@ -3333,7 +3333,7 @@ void EMC_SPINDLE_STAT_MSG::update(CMS *cms)
 
 	cms->beginClass("EMC_SPINDLE_STAT_MSG","RCS_STAT_MSG");
 
-	RCS_STAT_MSG::update_stat_msg_base(cms);
+	//RCS_STAT_MSG::update_stat_msg_base(cms);
 
 	cms->endClass("EMC_SPINDLE_STAT_MSG","RCS_STAT_MSG");
 
@@ -4075,9 +4075,9 @@ void EMC_TOOL_STAT::update(CMS *cms)
 
 	cms->beginClass("EMC_TOOL_STAT","EMC_TOOL_STAT_MSG");
 
-	//cms->beginBaseClass("EMC_TOOL_STAT_MSG");
-	//EMC_TOOL_STAT_MSG::update(cms);
-	//cms->endBaseClass("EMC_TOOL_STAT_MSG");
+	cms->beginBaseClass("EMC_TOOL_STAT_MSG");
+	EMC_TOOL_STAT_MSG::update(cms);
+	cms->endBaseClass("EMC_TOOL_STAT_MSG");
 
 	cms->update_with_name("pocketPrepped",pocketPrepped);
 	cms->update_with_name("toolInSpindle",toolInSpindle);
@@ -4102,7 +4102,7 @@ void EMC_TOOL_STAT_MSG::update(CMS *cms)
 
 	cms->beginClass("EMC_TOOL_STAT_MSG","RCS_STAT_MSG");
 
-	RCS_STAT_MSG::update_stat_msg_base(cms);
+	//RCS_STAT_MSG::update_stat_msg_base(cms);
 
 	cms->endClass("EMC_TOOL_STAT_MSG","RCS_STAT_MSG");
 
@@ -4929,9 +4929,9 @@ void EMC_TRAJ_STAT::update(CMS *cms)
 
 	cms->beginClass("EMC_TRAJ_STAT","EMC_TRAJ_STAT_MSG");
 
-	//cms->beginBaseClass("EMC_TRAJ_STAT_MSG");
-	//EMC_TRAJ_STAT_MSG::update(cms);
-	//cms->endBaseClass("EMC_TRAJ_STAT_MSG");
+	cms->beginBaseClass("EMC_TRAJ_STAT_MSG");
+	EMC_TRAJ_STAT_MSG::update(cms);
+	cms->endBaseClass("EMC_TRAJ_STAT_MSG");
 
 	cms->update_with_name("linearUnits",linearUnits);
 	cms->update_with_name("angularUnits",angularUnits);
@@ -4980,7 +4980,7 @@ void EMC_TRAJ_STAT_MSG::update(CMS *cms)
 
 	cms->beginClass("EMC_TRAJ_STAT_MSG","RCS_STAT_MSG");
 
-	RCS_STAT_MSG::update_stat_msg_base(cms);
+	//RCS_STAT_MSG::update_stat_msg_base(cms);
 
 	cms->endClass("EMC_TRAJ_STAT_MSG","RCS_STAT_MSG");
 
