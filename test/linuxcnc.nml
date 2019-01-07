@@ -10,9 +10,13 @@
 #B emcStatus             SHMEM   10.1.0.150       20480   0       0       2       16 1002 TCP=5005 xdr
 #B emcError              SHMEM   10.1.0.150       8192    0       0       3       16 1003 TCP=5005 xdr queue
 
-B emcCommand            SHMEM   10.1.0.138       8192    0       0       1       16 1001 TCP=5005 xdr queue
-B emcStatus             SHMEM   10.1.0.138       16384   0       0       2       16 1002 TCP=5005 xdr
-B emcError              SHMEM   10.1.0.138       8192    0       0       3       16 1003 TCP=5005 xdr queue
+#B emcCommand            SHMEM   10.1.0.138       8192    0       0       1       16 1001 TCP=5005 xdr queue
+#B emcStatus             SHMEM   10.1.0.138       16384   0       0       2       16 1002 TCP=5005 xdr
+#B emcError              SHMEM   10.1.0.138       8192    0       0       3       16 1003 TCP=5005 xdr queue
+
+B emcCommand            SHMEM   10.1.0.238        8192    0       0       1       16 1001 TCP=5005 xdr
+B emcStatus             SHMEM   10.1.0.238        16384   0       0       2       16 1002 TCP=5005 xdr
+B emcError              SHMEM   10.1.0.238        8192    0       0       3       16 1003 TCP=5005 xdr queue
 
 
 # Processes
