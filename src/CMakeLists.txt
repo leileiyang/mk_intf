@@ -30,3 +30,14 @@ add_custom_command (
   )
 
 add_library(mkmsg SHARED depend_struct.cc modal_state.cc shcom.cc emc_nml.cc)
+
+install (TARGETS mkmsg DESTINATION /usr/local/lib
+  PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
+              GROUP_READ GROUP_EXECUTE
+              WORLD_READ WORLD_EXECUTE)
+
+file (GLOB MK_HEADERS
+  "*.h"
+  "*.hh")
+
+install (FILES ${MK_HEADERS} DESTINATION /usr/local/include/mk_intf)
