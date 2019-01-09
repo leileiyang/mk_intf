@@ -6,46 +6,62 @@
 
 #include "../src/shcom.hh"
 
+static int g_serial_number = 0;
+
 class MkIntfTest: public ::testing::Test {
  protected:
   void SetUp() override {
     initEmc();
+    emcCommandSerialNumber = g_serial_number++;
     retry_time_ = 10.0;
     retry_interval_ = 1.0;
     strcpy(emc_nmlfile, "linuxcnc.nml");
+    tryNml(retry_time_, retry_interval_);
   }
 
   void TearDown() override {
     emcShutdown();
   }
 
- double retry_time_;
- double retry_interval_;
-
+  double retry_time_;
+  double retry_interval_;
 };
 
 TEST_F(MkIntfTest, TryNml) {
+  emcShutdown();
   int ret = tryNml(retry_time_, retry_interval_);
   EXPECT_EQ(ret, 0);
 }
 
-//extern int sendManual();
-//extern int sendAuto();
-//extern int sendMdi();
-
-TEST_F(MkIntfTest, SendInterface) {
-  int ret = tryNml(retry_time_, retry_interval_);
-  EXPECT_EQ(ret, 0);
+TEST_F(MkIntfTest, SendAuto) {
   ASSERT_NE(emcStatus, nullptr);
-
-  ret  = sendAuto();
+  ASSERT_NE(emcStatus->status, RCS_ERROR);
+  int ret = sendAuto();
   EXPECT_EQ(ret, 0);
   ret = updateStatus();
   EXPECT_EQ(ret, 0);
-  //EXPECT_EQ(emcStatus->task.state, EMC_TASK_STATE_ON);
   EXPECT_EQ(emcStatus->task.mode, EMC_TASK_MODE_AUTO);
 }
 
+TEST_F(MkIntfTest, SendMdi) {
+  ASSERT_NE(emcStatus, nullptr);
+  ASSERT_NE(emcStatus->status, RCS_ERROR);
+  int ret = sendMdi();
+  EXPECT_EQ(ret, 0);
+  ret = updateStatus();
+  EXPECT_EQ(ret, 0);
+  EXPECT_EQ(emcStatus->task.mode, EMC_TASK_MODE_MDI);
+}
+
+TEST_F(MkIntfTest, SendManual) {
+  ASSERT_NE(emcStatus, nullptr);
+  ASSERT_NE(emcStatus->status, RCS_ERROR);
+  int ret = sendManual();
+  EXPECT_EQ(ret, 0);
+  ret = updateStatus();
+  EXPECT_EQ(ret, 0);
+  EXPECT_EQ(emcStatus->task.mode, EMC_TASK_MODE_MANUAL);
+}
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
