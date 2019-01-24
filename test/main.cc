@@ -62,6 +62,31 @@ TEST_F(MkIntfTest, SendManual) {
   EXPECT_EQ(ret, 0);
   EXPECT_EQ(emcStatus->task.mode, EMC_TASK_MODE_MANUAL);
 }
+/*
+TEST_F(MkIntfTest, SendHome) {
+  ASSERT_NE(emcStatus, nullptr);
+  ASSERT_NE(emcStatus->status, RCS_ERROR);
+  int ret = sendHome(-1);
+  EXPECT_EQ(ret, 0);
+  ret = updateStatus();
+  EXPECT_EQ(ret, 0);
+  for (int i = 0; i < EMC_AXIS_MAX; i++) {
+    EXPECT_EQ(emcStatus->motion.axis[i].homed, 1);
+  }
+}*/
+
+TEST_F(MkIntfTest, SendUnHome) {
+  ASSERT_NE(emcStatus, nullptr);
+  ASSERT_NE(emcStatus->status, RCS_ERROR);
+  int ret = sendUnHome(-1);
+  EXPECT_EQ(ret, 0);
+  ret = updateStatus();
+  EXPECT_EQ(ret, 0);
+  for (int i = 0; i < EMC_AXIS_MAX; i++) {
+    EXPECT_EQ(emcStatus->motion.axis[i].homed, 0);
+  }
+}
+
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
