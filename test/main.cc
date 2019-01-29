@@ -73,7 +73,7 @@ TEST_F(MkIntfTest, SendHome) {
   for (int i = 0; i < EMC_AXIS_MAX; i++) {
     EXPECT_EQ(emcStatus->motion.axis[i].homed, 1);
   }
-}*/
+}
 
 TEST_F(MkIntfTest, SendUnHome) {
   ASSERT_NE(emcStatus, nullptr);
@@ -85,7 +85,7 @@ TEST_F(MkIntfTest, SendUnHome) {
   for (int i = 0; i < EMC_AXIS_MAX; i++) {
     EXPECT_EQ(emcStatus->motion.axis[i].homed, 0);
   }
-}
+}*/
 
 
 int main(int argc, char **argv) {

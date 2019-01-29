@@ -25,7 +25,7 @@ extern "C" {
 #define DEFAULT_EMC_INIFILE "emc.ini"
 
 /* default name of EMC NML file */
-#define DEFAULT_EMC_NMLFILE "emc.nml"
+#define DEFAULT_EMC_NMLFILE "emc.nml" 
 
 /* cycle time for emctask, in seconds */
 #define DEFAULT_EMC_TASK_CYCLE_TIME 0.100
@@ -45,7 +45,13 @@ extern "C" {
 /* default traverse rate, in user units per second */
 #define DEFAULT_TRAJ_MAX_VELOCITY 10.0
 
-/* default axis traverse rate, in user units per second */
+/* default joint velocity, in user units per second */
+#define DEFAULT_JOINT_MAX_VELOCITY 1.0
+
+/* default joint acceleration, in user units per second per second */
+#define DEFAULT_JOINT_MAX_ACCELERATION 1.0
+
+/* default axis velocity, in user units per second */
 #define DEFAULT_AXIS_MAX_VELOCITY 1.0
 
 /* default axis acceleration, in user units per second per second */

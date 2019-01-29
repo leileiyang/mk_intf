@@ -14,7 +14,7 @@
 #ifndef EMCPOS_H
 #define EMCPOS_H
 
-#include "posemath.h"	/* PmCartesian */
+#include "posemath.h"		/* PmCartesian */
 
 typedef struct EmcPose {
     PmCartesian tran;
@@ -22,7 +22,7 @@ typedef struct EmcPose {
     double u, v, w;
 } EmcPose;
 
-/*** The ZERO_EMC_POSE macro has been moved to shcom.hh
+/*** Move to shcom.hh
 #define ZERO_EMC_POSE(pos) do { \
 pos.tran.x = 0.0;               \
 pos.tran.y = 0.0;               \

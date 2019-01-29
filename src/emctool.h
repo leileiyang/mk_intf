@@ -12,7 +12,7 @@
 //
 //    You should have received a copy of the GNU General Public License
 //    along with this program; if not, write to the Free Software
-//    Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+//    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
 #ifndef EMCTOOL_H
 #define EMCTOOL_H
@@ -21,11 +21,11 @@
 
 /* Tools are numbered 1..CANON_TOOL_MAX, with tool 0 meaning no tool. */
 #define CANON_POCKETS_MAX 56	// max size of carousel handled
-#define CANON_TOOL_ENTRY_LEN 512	// how long each file line can be
-#define CANON_TOOL_COMMENT_LEN 256	// how long each comment can be
+#define CANON_TOOL_ENTRY_LEN 256	// how long each file line can be
 
 struct CANON_TOOL_TABLE {
     int toolno;
+    int pocketno;
     EmcPose offset;
     double diameter;
     double frontangle;

@@ -29,7 +29,7 @@ add_custom_command (
   VERBATIM
   )
 
-add_library(mkmsg SHARED depend_struct.cc modal_state.cc shcom.cc emc_nml.cc)
+add_library(mkmsg SHARED depend_struct.cc shcom.cc emc_nml.cc)
 
 install (TARGETS mkmsg DESTINATION /usr/local/lib
   PERMISSIONS OWNER_READ OWNER_WRITE OWNER_EXECUTE
